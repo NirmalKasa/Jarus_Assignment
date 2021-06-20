@@ -1,0 +1,153 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-2 col-sm-6 col-md-3
+                col-lg-4 col-xl-6">
+                <mat-form-field appearance = "standard">
+                  <mat-label>First Name
+                       </mat-label>
+                   <input matInput placeholder="First Name" required name="afFirstName" [(ngModel)]="afFirstName">
+
+                 </mat-form-field>
+    </div>
+    <div class="col-xs-2 col-sm-6 col-md-3
+                col-lg-4 col-xl-6">
+                <mat-form-field appearance = "standard">
+                <mat-label>Last Name
+                     </mat-label>
+                 <input matInput placeholder="Last Name" required name="afLastName" [(ngModel)]="afLastName">
+
+               </mat-form-field>
+    </div>
+    <div class="col-xs-2 col-sm-6 col-md-3
+                col-lg-4 col-xl-6" style="padding-top: 20px;">
+                <button  class="btn btn-primary" (click)="searchPersons()">Search</button>
+    </div>
+
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="bg bg-primary w-100">
+        Search Results
+    </div>
+  </div>
+
+  <!-- display search results here -->
+  <ul class="list-group" *ngIf="personsList">
+    <li *ngFor="let person of personsList" class="list-group-item d-flex justify-content-between align-items-center">
+       {{person.firstName}} &nbsp; {{person.lastName}} &nbsp; {{person.addressline1}} &nbsp;{{person.city}} &nbsp; {{person.state}} &nbsp;{{person.zipCode}}
+       <span class="badge badge-primary badge-pill" (click)="autoFillPersonDetails(person)" style="cursor: pointer;">Select</span>
+
+    </li>
+  </ul>
+</div>
+
+<!-- Remaining form -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-2 col-sm-6 col-md-3
+                col-lg-4 col-xl-6">
+      <div>
+        <mat-form-field appearance = "standard">
+          <mat-label>First Name
+               </mat-label>
+           <input matInput placeholder="Input" required name="firstName" [(ngModel)]="firstName">
+         </mat-form-field>
+    </div>
+    <div class="col-xs-2 col-sm-6 col-md-3
+                col-lg-4 col-xl-6">
+      <div>
+        <mat-form-field appearance = "standard">
+          <mat-label>Adderss Line1
+               </mat-label>
+           <input matInput placeholder="Input" required name="addressline1" [(ngModel)]="addressline1">
+         </mat-form-field>
+
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-2 col-sm-6 col-md-3
+                col-lg-4 col-xl-6">
+      <div >
+        <mat-form-field appearance = "standard">
+          <mat-label>Last Name
+               </mat-label>
+           <input matInput placeholder="Input" required name="lastName" [(ngModel)]="lastName">
+         </mat-form-field>
+         </div>
+    </div>
+    <div class="col-xs-2 col-sm-6 col-md-3
+                col-lg-4 col-xl-6">
+      <div >
+        <mat-form-field appearance = "standard">
+          <mat-label>Adderss Line2
+               </mat-label>
+           <input matInput placeholder="Input" required name="addressline2" [(ngModel)]="addressline2">
+         </mat-form-field>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-2 col-sm-6 col-md-3
+                col-lg-4 col-xl-6">
+      <div >
+        <mat-form-field appearance = "standard">
+          <mat-label>City
+               </mat-label>
+           <input matInput placeholder="Input" required name="city" [(ngModel)]="city">
+         </mat-form-field>
+         </div>
+    </div>
+    <div class="col-xs-2 col-sm-6 col-md-3
+                col-lg-4 col-xl-6">
+                <div >
+                  <mat-form-field appearance = "standard">
+                    <mat-label>State
+                         </mat-label>
+
+                     <mat-select placeholder = "Select State" required  name="state" [(ngModel)]="state">
+                      <mat-option value = "TN">TN</mat-option>
+                      <mat-option value = "BG">BG</mat-option>
+                   </mat-select>
+                   </mat-form-field>
+                </div>
+    </div>
+    <div class="col-xs-2 col-sm-6 col-md-3
+                col-lg-4 col-xl-6">
+      <div >
+        <mat-form-field appearance = "standard">
+          <mat-label>ZipCode
+               </mat-label>
+           <input matInput placeholder="Input" required name="zipCode" [(ngModel)]="zipCode" >
+         </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div >
+        <mat-form-field appearance = "standard">
+          <mat-label>Phone Number
+               </mat-label>
+           <input matInput placeholder="Input" required name="phone" [(ngModel)]="phone">
+         </mat-form-field>
+         </div>
+    </div>
+    <div class=" col-lg-6">
+      <div >
+        <mat-form-field appearance = "standard">
+          <mat-label>Email
+               </mat-label>
+           <input matInput placeholder="Input" required name="email" [(ngModel)]="email">
+         </mat-form-field>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+

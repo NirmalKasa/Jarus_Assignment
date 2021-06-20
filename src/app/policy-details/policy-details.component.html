@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="row">
+    <div class="bg bg-secondary w-100">
+      Fill  Policy Quote Details
+    </div>
+  </div>
+  <div class="row">
+    <div class="bg bg-primary w-100">
+        General Info Q993920
+    </div>
+  </div>
+</div>
+<br/>
+
+<app-general-info #generalInfo></app-general-info>
+
+<div class="container">
+
+  <div class="row">
+    <div class="bg bg-primary w-100">
+       Applicant Info
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <mat-radio-group aria-label="Select an option" >
+        <mat-radio-button value="1" (change)="handleChange('person')">Person</mat-radio-button>
+        <mat-radio-button value="2" (change)="handleChange('organization')">Organization</mat-radio-button>
+      </mat-radio-group>
+    </div>
+  </div>
+</div>
+
+
+
+ <div *ngIf="isOptionSelected">
+<ng-template [ngIf]="isPersonOptionSelected && isOptionSelected" [ngIfElse]="organizationTemplate">
+  <div>
+    <app-person-info #personInfo></app-person-info>
+  </div>
+</ng-template>
+
+<ng-template #organizationTemplate>
+  <app-orgnization-info #organizationInfo></app-orgnization-info>
+</ng-template>
+</div>
+<br/>
+
+<app-products-info #productInfo [option]="applicant"></app-products-info>
+
+<div style="text-align: center;">
+<button (click)="createPolicy(generalInfo,personInfo,organizationInfo,productInfo)" class="btn btn-primary">Create Policy</button>
+</div>
+
+
+
+
+

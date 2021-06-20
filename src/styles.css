@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html {
+  font-family: Roboto, sans-serif, Helvetica;
+}
+
+body {
+  margin: 0px;
+}
+
+mat-card {
+  max-width: 85%;
+  margin: 2em auto;
+  text-align: center;
+}
+
+.mat-toolbar {
+  justify-content: space-between;
+}
+
+mat-icon {
+  vertical-align: middle;
+}
